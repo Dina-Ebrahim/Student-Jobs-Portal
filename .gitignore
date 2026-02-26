@@ -1,4 +1,10 @@
 node_modules/
+<<<<<<< HEAD
 .env git add .
 git commit -m "Add project files without node_modules and env"
 backend/src/config/service-account-key.json
+=======
+.env
+backend/src/config/service-account-key.json
+git add .gitignore
+>>>>>>> temp-main
