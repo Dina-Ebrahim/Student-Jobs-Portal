@@ -1,12 +1,36 @@
 import React, { useState } from 'react';
 import { FaEnvelope, FaLock, FaEye } from 'react-icons/fa';
 import './JoinPortal.css'; 
-
+import { Link, useNavigate } from 'react-router-dom';
 
 const JoinPortal = () => {
   const [isRegistering, setIsRegistering] = useState(false);
   const [role, setRole] = useState("student");
- 
+ const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    rememberMe: false
+  });
+  const navigate = useNavigate();
+   const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === 'checkbox' ? checked : value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Login data:', formData);
+     if (formData.email.includes('@sci.cu.edu.eg')) {
+      // لو طالب
+      navigate('/student-profile');
+    } else {
+      // لو admin/teacher
+      navigate('/admin-profile');
+    }
+  };
 
   return (
     <div className="portal-body">
@@ -48,15 +72,41 @@ const JoinPortal = () => {
 
         {/* Login Form */}
         <div className="form-container login-container">
-          <form action="#">
+          <form onSubmit={handleSubmit}>
             <h1 className="portal-title">Student <br/>Jobs Portal</h1>
             <p className="subtitle">Sign in to your account</p>
-            <input type="email" placeholder="Enter your email" />
+            <div className="input-field-group">
+      <label>Email</label>
+      <input
+        type="email"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+        placeholder="student@science.cu.edu.eg"
+        required
+      />
+    </div>
             
-            <input type="password" placeholder="Enter your password" required minLength="8" />
+           {/* إضافة الـ div ده حول الـ Password */}
+    <div className="input-field-group">
+      <label>Password</label>
+      <input
+        type="password"
+        name="password"
+        value={formData.password}
+        onChange={handleChange}
+        placeholder="Enter your password"
+        required
+      />
+    </div>
            <div className="content">
                 <div className="checkbox">
-            <input type="checkbox" id="rememberMe" />
+           <input
+  type="checkbox"
+  name="rememberMe"
+  checked={formData.rememberMe}
+  onChange={handleChange}
+/>
             <label >Remember me</label>
             </div> 
                           <div className="pass-link">
@@ -64,7 +114,7 @@ const JoinPortal = () => {
                           </div>          
             </div>
           
-           <button>Login</button>
+           <button type="submit">Login</button>
           </form>
         </div>
 
