@@ -169,7 +169,7 @@ input {
   display:flex;
   background:#eee;
   border-radius:50px;
- margin: 0 auto 20px auto; /* auto من اليمين والشمال عشان يسنتر نفسه */
+ margin: 0 auto 20px auto; 
   padding: 0px;
   width: 280px;
   border: 1px solid #eee;
@@ -181,22 +181,22 @@ overflow: hidden;
   border: none;
   background: transparent;
   cursor: pointer;
-  color: #666; /* لون الكلام وهو مش متفعل */
+  color: #666;
   font-weight: 700;
   font-size: 14px;
   transition: all 0.3s ease;
-  border-radius: 20px; /* حواف دائرية للزرار نفسه */
+  border-radius: 20px; 
 margin: 0;
   text-align: center;
 }
 
 .role-switch button.active {
   background: #478cd1;
-  color: #ffffff; /* لون الكلام أبيض */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* ضل خفيف ليعطي عمق */
+  color: #ffffff; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 .role-switch button:hover {
-  letter-spacing: normal; /* عشان الكلام ميبعدش عن بعضه في السويتش */
+  letter-spacing: normal; 
 }
 
 
@@ -207,7 +207,7 @@ margin: 0;
   position: relative;
   overflow: hidden;
   width:70% ;
-  /*768px  */
+ 
   max-width: 100%;
   min-height: 600px;
 }

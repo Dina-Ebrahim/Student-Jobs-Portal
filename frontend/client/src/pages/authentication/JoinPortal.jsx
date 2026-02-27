@@ -24,10 +24,10 @@ const JoinPortal = () => {
     e.preventDefault();
     console.log('Login data:', formData);
      if (formData.email.includes('@sci.cu.edu.eg')) {
-      // لو طالب
+      
       navigate('/student-profile');
     } else {
-      // لو admin/teacher
+    
       navigate('/admin-profile');
     }
   };
@@ -87,7 +87,7 @@ const JoinPortal = () => {
       />
     </div>
             
-           {/* إضافة الـ div ده حول الـ Password */}
+          
     <div className="input-field-group">
       <label>Password</label>
       <input
