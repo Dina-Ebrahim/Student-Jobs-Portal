@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -21,3 +22,15 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+=======
+node_modules/
+<<<<<<< HEAD
+.env git add .
+git commit -m "Add project files without node_modules and env"
+backend/src/config/service-account-key.json
+=======
+.env
+backend/src/config/service-account-key.json
+git add .gitignore
+>>>>>>> temp-main
+>>>>>>> origin/main

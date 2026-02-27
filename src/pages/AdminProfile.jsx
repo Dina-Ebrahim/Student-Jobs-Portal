@@ -6,10 +6,10 @@
 //   const [activeTab] = useState('dashboard');
 
 //   const users = [
-//     { id: 1, name: 'John Doe', email: 'john@university.edu', role: 'Student', status: 'Active' },
-//     { id: 2, name: 'Jane Smith', email: 'jane@university.edu', role: 'Employer', status: 'Active' },
-//     { id: 3, name: 'Bob Wilson', email: 'bob@university.edu', role: 'Student', status: 'Inactive' },
-//     { id: 4, name: 'Sarah Lee', email: 'sarah@university.edu', role: 'Employer', status: 'Active' },
+//     { id: 1, name: 'Reem Ahmed', email: 'reem@university.edu', role: 'Student', status: 'Active' },
+//     { id: 2, name: 'Fatma Abdelmotagly', email: 'fatma@university.edu', role: 'Employer', status: 'Active' },
+//     { id: 3, name: 'Dina Ebrahim', email: 'dina@university.edu', role: 'Student', status: 'Inactive' },
+//     { id: 4, name: 'Sarah Mahmoud', email: 'sarah@university.edu', role: 'Employer', status: 'Active' },
 //   ];
 
 //   return (

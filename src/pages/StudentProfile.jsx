@@ -119,7 +119,7 @@ const StudentProfile = () => {
       }}>
         {/* Science Faculty Header */}
         <div style={{ marginBottom: '20px' }}>
-          <h2 style={{ color: '#0B2A4A', fontSize: '20px', fontWeight: '500' }}>Science Faculty</h2>
+          <h2 style={{ color: '#0B2A4A', fontSize: '20px', fontWeight: '500' }}>Faculty of Science </h2>
         </div>
 
         {/* Profile Header with Image Upload */}
