@@ -22,7 +22,7 @@ const ProfileCard = () => {
           <i className="fas fa-user-graduate"></i>
         </div>
         <div>
-          <h4>John Doe</h4>
+          <h4>Reem Ahmed</h4>
           <p>Computer Science - 3rd Year</p>
           <p>GPA: 3.7</p>
         </div>
