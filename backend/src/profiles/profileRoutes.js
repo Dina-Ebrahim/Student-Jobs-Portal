@@ -1,27 +1,40 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const verifyToken = require("../middleware/verifyToken");
-const { getProfile, updateProfile } = require("./profileService"); // تأكدي إن المسار هنا صح
+const admin = require('firebase-admin'); 
 
-// الحصول على البروفايل
-router.get("/", verifyToken, async (req, res) => {
+const verifyToken = require("../middleware/verifyToken"); 
+
+const db = admin.firestore();
+
+
+router.get('/', verifyToken, async (req, res) => {
   try {
-    const data = await getProfile(req.user.uid);
-    res.json(data);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
+    
+    const userDoc = await db.collection('users').doc(req.user.uid).get();
+    
+    if (!userDoc.exists) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.status(200).json(userDoc.data());
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching profile", error: error.message });
   }
 });
 
-// تحديث البروفايل
-router.put("/", verifyToken, async (req, res) => {
+
+router.put('/', verifyToken, async (req, res) => {
   try {
-    const result = await updateProfile(req.user.uid, req.body);
-    res.json(result);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
+    const userId = req.user.uid; 
+    const updatedData = req.body; 
+
+
+    await db.collection('users').doc(userId).update(updatedData);
+
+    res.status(200).json({ message: "Profile updated successfully!", data: updatedData });
+  } catch (error) {
+    res.status(500).json({ message: "Error updating profile", error: error.message });
   }
 });
 
-// ⚠️ أهم سطر اللي كان ناقص أو فيه غلطة
 module.exports = router;
