@@ -1,6 +1,6 @@
 const { db } = require('../config/firebase'); 
 
-exports.getAllUsers = async (req, res) => {
+exports.getAllUsers = async (req, res) =>{
   try {
   
     if (req.user.role !== "admin") {
