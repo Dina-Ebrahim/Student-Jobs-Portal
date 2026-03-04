@@ -5,6 +5,4 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });
 
-console.log("Firebase Connected ✅");
-
 module.exports = admin;
