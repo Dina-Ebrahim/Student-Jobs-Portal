@@ -21,7 +21,7 @@
 
 body {
   font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-  background-image: url("C:\\student-jobs-portal\\client\\my-app\\images\\Job Portal.jpg") ;
+  background-image: url('../../images/Job Portal.jpg') ;
   background-color: #f5f6fa;
   color: #374151;
 }
