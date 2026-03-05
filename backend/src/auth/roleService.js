@@ -12,5 +12,4 @@ async function getRole(uid) {
   const user = await admin.auth().getUser(uid);
   return user.customClaims?.role || 'student';
 }
-
 module.exports = { assignRole, getRole };
