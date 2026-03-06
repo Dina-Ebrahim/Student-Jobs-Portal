@@ -74,7 +74,6 @@ await db.collection("users").doc(userRecord.uid).set({
 });
 ////////////////////////
 
-
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
